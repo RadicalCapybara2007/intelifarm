@@ -19,6 +19,10 @@ public class ParcelService {
     }
 
     public Parcel registerParcel(ParcelRequestDTO requestDTO) {
+        // Sanitizar entradas
+        requestDTO.sanitize();
+
+        // Validar unicidad por nombre
         if (parcelRepository.existsByName(requestDTO.getName())) {
             throw new DuplicateResourceException("Ya existe una parcela registrada con el nombre: " + requestDTO.getName());
         }
