@@ -1,8 +1,8 @@
-package com.huertos.controller;
+package com.intelifarm.controller;
 
-import com.huertos.dto.ParcelRequestDTO;
-import com.huertos.model.Parcel;
-import com.huertos.service.ParcelService;
+import com.intelifarm.dto.ParcelRequestDTO;
+import com.intelifarm.model.Parcel;
+import com.intelifarm.service.ParcelService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
