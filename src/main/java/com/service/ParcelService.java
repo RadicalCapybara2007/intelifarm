@@ -1,8 +1,8 @@
 package com.intelifarm.service;
 
 import com.intelifarm.dto.ParcelRequestDTO;
-import com.intelifarm.exception.DuplicateResourceException;
-import com.intelifarm.exception.ResourceNotFoundException;
+import com.intelifarm.exceptions.DuplicateResourceException;
+import com.intelifarm.exceptions.ResourceNotFoundException;
 import com.intelifarm.model.Parcel;
 import com.intelifarm.repository.ParcelRepository;
 import org.springframework.stereotype.Service;
@@ -19,10 +19,6 @@ public class ParcelService {
     }
 
     public Parcel registerParcel(ParcelRequestDTO requestDTO) {
-        // Sanitizar entradas
-        requestDTO.sanitize();
-
-        // Validar unicidad por nombre
         if (parcelRepository.existsByName(requestDTO.getName())) {
             throw new DuplicateResourceException("Ya existe una parcela registrada con el nombre: " + requestDTO.getName());
         }
