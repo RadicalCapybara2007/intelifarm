@@ -1,4 +1,4 @@
-package com.inteliarm.exception;
+package com.intelifarm.exception;
 
 public class ParcelException {
 
